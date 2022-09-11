@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/be8b3559-810b-41fe-8b29-93fb2ae4c9f1/microsoft.web/sites/subscriptions/be8b3559-810b-41fe-8b29-93fb2ae4c9f1/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/monkey-data-api",
+    "appService.deploySubpath": "."
+}

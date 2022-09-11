@@ -17,7 +17,7 @@ def Monkey_list(request):
     if request.method == 'GET':
         monkey = Monkey.objects.all()
         serializer = MonkeySerializer(monkey,many =True)
-        return JsonResponse({'monkey':serializer.data},)
+        return JsonResponse(serializer.data,safe=False)
     
 
     if request.method == 'POST':
