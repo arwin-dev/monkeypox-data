@@ -19,5 +19,5 @@ from monkey_data import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('monkey/',views.Monkey_list)
+    path('',views.Monkey_list)
 ]
