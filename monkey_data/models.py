@@ -5,7 +5,7 @@ from django.db import models
 class Monkey(models.Model):
     ID = models.CharField(max_length=50,primary_key=True)
     Status = models.CharField(max_length=50,blank=True)
-    Location = models.CharField(max_length=50,blank=False)
+    Location = models.CharField(max_length=50,blank=True)
     City = models.CharField(max_length=100,blank=True)
     Country = models.CharField(max_length=100,blank=False)
     Age = models.CharField(max_length=10,blank=True,null=True)

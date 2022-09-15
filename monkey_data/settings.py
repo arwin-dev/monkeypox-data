@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lrry9mkc--n!xxb$#9-pzs%uise)zx%h-h4_qz#)9t#u%7oq)2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['monkey.azurewebsites.net']
+ALLOWED_HOSTS = ['monkdata.azurewebsites.net','127.0.0.1']
 
 
 # Application definition
@@ -131,16 +131,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DATE_INPUT_FORMATS': ["%Y-%m-%d %H", ],
     'DATETIME_FORMAT': '%Y-%m-%d %H',
-    'DATE_FORMAT': '%Y-%m-%d %H'
+    'DATE_FORMAT': '%Y-%m-%d %H',
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ]
 }
+
+
 
 DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
-#REST_FRAMEWORK = {
-#    'DEFAULT_PERMISSION_CLASSES': [
-#        'rest_framework.permissions.IsAuthenticated',
-#    ],
-#    'DEFAULT_AUTHENTICATION_CLASSES': (
-#        'rest_framework.authentication.BasicAuthentication',
-#    )
-#}
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+       'rest_framework.authentication.BasicAuthentication',
+    )
+}

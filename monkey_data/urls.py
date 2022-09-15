@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from monkey_data import views
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('monkey/',views.Monkey_list)
+    path('monkey/',views.Monkey_list),
+    #path('monkey/<str:ID>',views.monkey_country_details)
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
